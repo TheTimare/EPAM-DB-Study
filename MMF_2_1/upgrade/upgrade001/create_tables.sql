@@ -1,4 +1,4 @@
-DEFINE USER_NAME = c##timofey
+DEFINE USER_NAME = &&1
 
 SET SERVEROUTPUT ON
 
@@ -55,7 +55,6 @@ CREATE TABLE &&USER_NAME..storage (
   storage_id INT NOT NULL,
   box_id INT NOT NULL UNIQUE,
   cell_id INT NOT NULL,
-  amount INT NOT NULL,
   CONSTRAINT storage_pk 
     PRIMARY KEY (storage_id, cell_id),
   CONSTRAINT storage_fk
