@@ -6,9 +6,9 @@ DECLARE
     data_sql VARCHAR2(4000);
 	index_sql VARCHAR2(4000);
     data_tbs_name VARCHAR2(500) := '&&USER_NAME'||'_DATA';
-    data_file_name VARCHAR2(500) := '&&TBS_LOCATION'||'\'||data_tbs_name||'.dbf';
+    data_file_name VARCHAR2(500) := '&&TBS_LOCATION'||'\\'||data_tbs_name||'.dbf';
 	index_tbs_name VARCHAR2(500) := '&&USER_NAME'||'_INDEX';
-    index_file_name VARCHAR2(500) := '&&TBS_LOCATION'||'\'||index_tbs_name||'.dbf';
+    index_file_name VARCHAR2(500) := '&&TBS_LOCATION'||'\\'||index_tbs_name||'.dbf';
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Creating new data tablespace "'||data_tbs_name||'" and index "'||index_tbs_name||'"');
     -- Cтрокa для создания табличного пространства
