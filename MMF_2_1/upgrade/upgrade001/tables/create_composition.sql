@@ -3,7 +3,7 @@ DEFINE TABLESPACE_NAME = "&&USER_NAME._DATA"
 
 SET SERVEROUTPUT ON
 
-CREATE TABLE &&USER_NAME..composition ( 
+CREATE TABLE composition ( 
   product_id INT NOT NULL,
   component_name VARCHAR(255),
   weight NUMBER(6,3),
@@ -14,7 +14,7 @@ CREATE TABLE &&USER_NAME..composition (
   ),
   CONSTRAINT compose_fk
     FOREIGN KEY (product_id)
-    REFERENCES &&USER_NAME..product(product_id)
+    REFERENCES product(product_id)
 )
 TABLESPACE &&TABLESPACE_NAME;
 

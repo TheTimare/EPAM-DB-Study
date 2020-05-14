@@ -3,7 +3,7 @@ DEFINE TABLESPACE_NAME = "&&USER_NAME._DATA"
 
 SET SERVEROUTPUT ON
 
-CREATE TABLE &&USER_NAME..storage ( 
+CREATE TABLE storage ( 
   storage_id INT NOT NULL,
   box_id INT NOT NULL UNIQUE,
   cell_id INT NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE &&USER_NAME..storage (
   ),
   CONSTRAINT storage_fk
     FOREIGN KEY (box_id)
-    REFERENCES &&USER_NAME..box(box_id)
+    REFERENCES box(box_id)
 )
 TABLESPACE &&TABLESPACE_NAME;
 

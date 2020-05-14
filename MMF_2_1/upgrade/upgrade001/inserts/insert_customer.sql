@@ -2,8 +2,8 @@ DEFINE USER_NAME = &&1
 
 SET SERVEROUTPUT ON
 
-INSERT INTO &&USER_NAME..customer VALUES ('1', '2', 'SOSEDI', 'address1');
-INSERT INTO &&USER_NAME..customer VALUES ('2', '1', 'Hillnov', 'address2');
+INSERT INTO customer VALUES ('1', '2', 'SOSEDI', 'address1');
+INSERT INTO customer VALUES ('2', '1', 'Hillnov', 'address2');
 
 SET SERVEROUTPUT OFF
 

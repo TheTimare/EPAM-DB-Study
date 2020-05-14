@@ -6,6 +6,8 @@ DEFINE USER_NAME_ = &&1
 
 SET SERVEROUTPUT ON
 
+/*You should be connected as user to run script*/
+/*main.sql script above have connecting script, start it instead of this*/
 PROMPT Username: &&USER_NAME_
 PROMPT
 PROMPT Calling tables creating

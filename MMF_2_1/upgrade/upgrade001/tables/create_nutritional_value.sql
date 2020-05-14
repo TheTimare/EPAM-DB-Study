@@ -3,7 +3,7 @@ DEFINE TABLESPACE_NAME = "&&USER_NAME._DATA"
 
 SET SERVEROUTPUT ON
 
-CREATE TABLE &&USER_NAME..nutritional_value ( 
+CREATE TABLE nutritional_value ( 
   product_id INT NOT NULL,
   fats NUMBER(6,3),
   proteins NUMBER(6,3),
@@ -16,7 +16,7 @@ CREATE TABLE &&USER_NAME..nutritional_value (
   ENABLE,
   CONSTRAINT nv_fk
     FOREIGN KEY (product_id)
-    REFERENCES &&USER_NAME..product(product_id) 
+    REFERENCES product(product_id) 
 )
 TABLESPACE &&TABLESPACE_NAME;
 

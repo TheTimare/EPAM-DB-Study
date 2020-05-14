@@ -3,7 +3,7 @@ DEFINE TABLESPACE_NAME = "&&USER_NAME._DATA"
 
 SET SERVEROUTPUT ON
 
-CREATE TABLE &&USER_NAME..box ( 
+CREATE TABLE box ( 
   box_id INT NOT NULL,
   type VARCHAR(255) NOT NULL,
   product_id INT NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE &&USER_NAME..box (
   ),
   CONSTRAINT box_fk
     FOREIGN KEY (product_id)
-    REFERENCES &&USER_NAME..product(product_id)
+    REFERENCES product(product_id)
 )
 TABLESPACE &&TABLESPACE_NAME;
 

@@ -3,7 +3,7 @@ DEFINE TABLESPACE_NAME = "&&USER_NAME._DATA"
 
 SET SERVEROUTPUT ON
 
-CREATE TABLE &&USER_NAME..consignment_content ( 
+CREATE TABLE consignment_content ( 
   consignment_id INT NOT NULL,
   box_id INT NOT NULL,
   price DECIMAL(10,2) NOT NULL,
@@ -14,10 +14,10 @@ CREATE TABLE &&USER_NAME..consignment_content (
   ),
   CONSTRAINT cons_cont_fk
     FOREIGN KEY (box_id)
-    REFERENCES &&USER_NAME..box(box_id),
+    REFERENCES box(box_id),
   CONSTRAINT cons_cont_fk2
     FOREIGN KEY (consignment_id)
-    REFERENCES &&USER_NAME..consignment(consignment_id)
+    REFERENCES consignment(consignment_id)
 )
 TABLESPACE &&TABLESPACE_NAME;
 

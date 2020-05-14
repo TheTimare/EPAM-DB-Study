@@ -2,8 +2,8 @@ DEFINE USER_NAME = &&1
 
 SET SERVEROUTPUT ON
 
-INSERT INTO &&USER_NAME..transport VALUES ('0', 'customer_own', 'all');
-INSERT INTO &&USER_NAME..transport VALUES ('1', 'Volvo FM', 'truck');
+INSERT INTO transport VALUES ('0', 'customer_own', 'all');
+INSERT INTO transport VALUES ('1', 'Volvo FM', 'truck');
 
 SET SERVEROUTPUT OFF
 

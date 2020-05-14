@@ -2,8 +2,8 @@ DEFINE USER_NAME = &&1
 
 SET SERVEROUTPUT ON
 
-INSERT INTO &&USER_NAME..storage VALUES ('1', '2', '1');
-INSERT INTO &&USER_NAME..storage VALUES ('2', '1', '3');
+INSERT INTO storage VALUES ('1', '2', '1');
+INSERT INTO storage VALUES ('2', '1', '3');
 
 SET SERVEROUTPUT OFF
 

@@ -3,7 +3,7 @@ DEFINE TABLESPACE_NAME = "&&USER_NAME._DATA"
 
 SET SERVEROUTPUT ON
 
-CREATE TABLE &&USER_NAME..consignment ( 
+CREATE TABLE consignment ( 
   consignment_id INT NOT NULL,
   status VARCHAR(255) NOT NULL,
   order_date DATE DEFAULT(sysdate),
@@ -15,7 +15,7 @@ CREATE TABLE &&USER_NAME..consignment (
   ),
   CONSTRAINT cons_fk
     FOREIGN KEY (transport_id)
-    REFERENCES &&USER_NAME..transport(transport_id)
+    REFERENCES transport(transport_id)
 )
 TABLESPACE &&TABLESPACE_NAME;
 

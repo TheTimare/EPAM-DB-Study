@@ -3,7 +3,7 @@ DEFINE TABLESPACE_NAME = "&&USER_NAME._DATA"
 
 SET SERVEROUTPUT ON
 
-CREATE TABLE &&USER_NAME..customer ( 
+CREATE TABLE customer ( 
   customer_id INT NOT NULL,
   consignment_id INT NOT NULL,
   name VARCHAR(255) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE &&USER_NAME..customer (
   ),
   CONSTRAINT customer_fk
     FOREIGN KEY (consignment_id)
-    REFERENCES &&USER_NAME..consignment(consignment_id)
+    REFERENCES consignment(consignment_id)
 )
 TABLESPACE &&TABLESPACE_NAME;
 
@@ -30,15 +30,15 @@ UNDEFINE USER_NAME
 UNDEFINE TABLESPACE_NAME
 
 /*
-DROP TABLE &&USER_NAME..composition;
-DROP TABLE &&USER_NAME..nutritional_value;
+DROP TABLE composition;
+DROP TABLE nutritional_value;
 
-DROP TABLE &&USER_NAME..customer;
-DROP TABLE &&USER_NAME..consignment_content;
-DROP TABLE &&USER_NAME..consignment;
-DROP TABLE &&USER_NAME..transport;
-DROP TABLE &&USER_NAME..storage; 
-DROP TABLE &&USER_NAME..box;
+DROP TABLE customer;
+DROP TABLE consignment_content;
+DROP TABLE consignment;
+DROP TABLE transport;
+DROP TABLE storage; 
+DROP TABLE box;
 
-DROP TABLE &&USER_NAME..product;
+DROP TABLE product;
 */
