@@ -1,5 +1,3 @@
-DEFINE USER_NAME = &&1
-
 SET SERVEROUTPUT ON
 
 INSERT INTO composition VALUES ('1', 'Cacao', '69');
@@ -16,5 +14,3 @@ INSERT INTO composition VALUES ('3', 'Filling', '11');
 INSERT INTO composition VALUES ('3', 'flavoring', '20');
 
 SET SERVEROUTPUT OFF
-
-UNDEFINE USER_NAME

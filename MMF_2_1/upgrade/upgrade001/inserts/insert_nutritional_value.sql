@@ -1,5 +1,3 @@
-DEFINE USER_NAME = &&1
-
 SET SERVEROUTPUT ON
 
 INSERT INTO nutritional_value VALUES (1, 5.6, 7.2, 87.2);
@@ -7,5 +5,3 @@ INSERT INTO nutritional_value VALUES (2, 10.3, 7.5, 83.2);
 INSERT INTO nutritional_value VALUES (3, 7.2, 5.6, 87.2);
 
 SET SERVEROUTPUT OFF
-
-UNDEFINE USER_NAME

@@ -22,15 +22,15 @@ PROMPT Calling tables creating
 @tables/create_customer.sql &&USER_NAME_ 
 PROMPT
 PROMPT Calling insert scripts
-@inserts/insert_product.sql &&USER_NAME_
-@inserts/insert_nutritional_value.sql &&USER_NAME_
-@inserts/insert_composition.sql &&USER_NAME_
-@inserts/insert_box.sql &&USER_NAME_
-@inserts/insert_storage.sql &&USER_NAME_
-@inserts/insert_transport.sql &&USER_NAME_
-@inserts/insert_consignment.sql &&USER_NAME_
-@inserts/insert_consignment_content.sql &&USER_NAME_
-@inserts/insert_customer.sql &&USER_NAME_
+@inserts/insert_product.sql
+@inserts/insert_nutritional_value.sql
+@inserts/insert_composition.sql
+@inserts/insert_box.sql
+@inserts/insert_storage.sql
+@inserts/insert_transport.sql
+@inserts/insert_consignment.sql
+@inserts/insert_consignment_content.sql
+@inserts/insert_customer.sql
 PROMPT
 
 SET SERVEROUTPUT OFF
