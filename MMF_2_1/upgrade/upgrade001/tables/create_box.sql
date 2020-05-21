@@ -20,6 +20,7 @@ CREATE TABLE box (
 TABLESPACE &&TABLESPACE_NAME;
 
 COMMENT ON COLUMN box.box_id IS 'Уникальный идентификатор коробки';
+COMMENT ON COLUMN box.type IS 'Тип - для продажи или для транспортировки';
 COMMENT ON COLUMN box.product_id IS 'Уникальный идентификатор продукта';
 COMMENT ON COLUMN box.amount IS 'Количество продукта в коробке';
 
