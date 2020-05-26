@@ -6,7 +6,7 @@ SET SERVEROUTPUT ON
 CREATE TABLE composition ( 
   product_id INT NOT NULL,
   component_name VARCHAR(255),
-  weight NUMBER(6,3),
+  weight NUMBER(10,5),
   CONSTRAINT compose_pk 
     PRIMARY KEY (product_id, component_name)
   USING INDEX (

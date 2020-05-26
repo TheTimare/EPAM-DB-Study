@@ -11,16 +11,13 @@ CREATE TABLE customer (
     PRIMARY KEY (customer_id)
   USING INDEX (
       CREATE UNIQUE INDEX pk_customer ON customer(customer_id ASC)
-  ),
-  CONSTRAINT customer_fk1
-    FOREIGN KEY (customer_id)
-    REFERENCES batch(batch_id)
+  )
 )
 TABLESPACE &&TABLESPACE_NAME;
 
-COMMENT ON COLUMN customer.customer_id IS '”никальный идентификатор заказчика';
-COMMENT ON COLUMN customer.name IS '»м€ заказчика';
-COMMENT ON COLUMN customer.address IS 'јдресс заказчика';
+COMMENT ON COLUMN customer.customer_id IS 'Уникальный идентификатор заказчика';
+COMMENT ON COLUMN customer.name IS 'Имя заказчика';
+COMMENT ON COLUMN customer.address IS 'Адресс заказчика';
 
 SET SERVEROUTPUT OFF
 

@@ -20,6 +20,8 @@ CREATE TABLE batch (
 )
 TABLESPACE &&TABLESPACE_NAME;
 
+CREATE INDEX fk_transport ON batch(transport_id ASC);
+
 COMMENT ON COLUMN batch.batch_id IS 'Уникальный идентификатор партии';
 COMMENT ON COLUMN batch.customer_id IS 'Уникальный идентификатор заказчика';
 COMMENT ON COLUMN batch.status IS 'Статус(готовится, готова и т.д.)';

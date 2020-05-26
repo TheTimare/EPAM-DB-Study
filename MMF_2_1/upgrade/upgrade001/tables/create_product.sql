@@ -6,14 +6,14 @@ SET SERVEROUTPUT ON
 CREATE TABLE product ( 
   product_id INT NOT NULL,
   name VARCHAR(255) NOT NULL,
-  weight NUMBER(6,3),
-  energy_value NUMBER(6,3),
+  weight NUMBER(10,5),
+  energy_value NUMBER(10,5),
   shelf_life INT,
+  price NUMBER(10,5),
   CONSTRAINT pk_product PRIMARY KEY (product_id)
   USING INDEX (
       CREATE UNIQUE INDEX product_pk ON product (product_id ASC) 
   )
-  ENABLE 
 )
 TABLESPACE &&TABLESPACE_NAME;
 

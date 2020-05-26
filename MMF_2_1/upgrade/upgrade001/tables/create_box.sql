@@ -5,9 +5,11 @@ SET SERVEROUTPUT ON
 
 CREATE TABLE box ( 
   box_id INT NOT NULL,
+  weight NUMBER(10,5) NOT NULL,
   type VARCHAR(255) NOT NULL,
-  product_id INT NOT NULL,
+  price NUMBER(10,5),
   amount INT NOT NULL,
+  product_id INT NOT NULL,
   CONSTRAINT box_pk 
     PRIMARY KEY (box_id)
   USING INDEX (
@@ -19,8 +21,12 @@ CREATE TABLE box (
 )
 TABLESPACE &&TABLESPACE_NAME;
 
+CREATE INDEX fk_product_id ON box(product_id ASC);
+
 COMMENT ON COLUMN box.box_id IS 'Уникальный идентификатор коробки';
+COMMENT ON COLUMN box.weight IS 'Вес всей коробки';
 COMMENT ON COLUMN box.type IS 'Тип - для продажи или для транспортировки';
+COMMENT ON COLUMN box.price IS 'Цена коробки';
 COMMENT ON COLUMN box.product_id IS 'Уникальный идентификатор продукта';
 COMMENT ON COLUMN box.amount IS 'Количество продукта в коробке';
 
