@@ -5,7 +5,9 @@ Special repository for DB tasks
 - [x] [Lab 1](../master/report_lab1)
 - [x] [Lab 2](../master/MMF_2_1)
 - [ ] [Lab 3](../master/MMF_2_1/upgrade/upgrade001)
+- [ ] [Lab 3 Check](../master/MMF_2_1/upgrade/upgrade002)
 
 #### Members of the first team
 * Ivanov Timofey
 * Krainii Edvard
+* Danilevich Mathew
