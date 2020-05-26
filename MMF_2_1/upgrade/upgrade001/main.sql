@@ -3,7 +3,7 @@ SET TIMING ON
 SPOOL UPGRADE_SCHEMA.LOG
 
 DEFINE USER_NAME_ = &&1
-connect &&USER_NAME_/orcl 
+connect &&USER_NAME_/oracle
 
 SET SERVEROUTPUT ON
 
@@ -18,9 +18,9 @@ PROMPT Calling tables creating
 @tables/create_box.sql &&USER_NAME_ 
 @tables/create_storage.sql &&USER_NAME_ 
 @tables/create_transport.sql &&USER_NAME_ 
+@tables/create_customer.sql &&USER_NAME_ 
 @tables/create_batch.sql &&USER_NAME_ 
 @tables/create_batch_content.sql &&USER_NAME_ 
-@tables/create_customer.sql &&USER_NAME_ 
 PROMPT
 PROMPT Calling insert scripts
 @inserts/insert_product.sql
@@ -29,9 +29,9 @@ PROMPT Calling insert scripts
 @inserts/insert_box.sql
 @inserts/insert_storage.sql
 @inserts/insert_transport.sql
+@inserts/insert_customer.sql
 @inserts/insert_batch.sql
 @inserts/insert_batch_content.sql
-@inserts/insert_customer.sql
 PROMPT
 
 SET SERVEROUTPUT OFF

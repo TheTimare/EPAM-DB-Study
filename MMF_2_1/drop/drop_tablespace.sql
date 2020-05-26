@@ -8,10 +8,10 @@ DECLARE
 	index_tbs_name VARCHAR2(500) := '&&USER_NAME'||'_INDEX';
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Dropping data tablespace "'||data_tbs_name||'" and index "'||index_tbs_name||'"');
-    -- Cтроки для удаления табличных пространств
+    -- CС‚СЂРѕРєРё РґР»СЏ СѓРґР°Р»РµРЅРёСЏ С‚Р°Р±Р»РёС‡РЅС‹С… РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІ
     data_sql:='DROP TABLESPACE '||data_tbs_name||' INCLUDING CONTENTS AND DATAFILES';
 	index_sql:='DROP TABLESPACE '||index_tbs_name||' INCLUDING CONTENTS AND DATAFILES';
-    -- Выполняем код
+    -- Р’С‹РїРѕР»РЅСЏРµРј РєРѕРґ
     EXECUTE IMMEDIATE data_sql;
     EXECUTE IMMEDIATE index_sql;
 END;

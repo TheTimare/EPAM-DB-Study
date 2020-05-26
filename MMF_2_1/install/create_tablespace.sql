@@ -11,10 +11,10 @@ DECLARE
     index_file_name VARCHAR2(500) := '&&TBS_LOCATION'||'\\'||index_tbs_name||'.dbf';
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Creating new data tablespace "'||data_tbs_name||'" and index "'||index_tbs_name||'"');
-    -- Cтрокa для создания табличного пространства
+    -- CС‚СЂРѕРєa РґР»СЏ СЃРѕР·РґР°РЅРёСЏ С‚Р°Р±Р»РёС‡РЅРѕРіРѕ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІР°
     data_sql:='CREATE SMALLFILE TABLESPACE '||data_tbs_name||' DATAFILE '''||data_file_name||''' SIZE 10M AUTOEXTEND ON NEXT 10M MAXSIZE 10G EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT AUTO';
 	index_sql:='CREATE SMALLFILE TABLESPACE '||index_tbs_name||' DATAFILE '''||index_file_name||''' SIZE 10M AUTOEXTEND ON NEXT 10M MAXSIZE 10G EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT AUTO';
-    -- Создаём табличное пространство
+    -- РЎРѕР·РґР°С‘Рј С‚Р°Р±Р»РёС‡РЅРѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ
     EXECUTE IMMEDIATE data_sql;
     EXECUTE IMMEDIATE index_sql;
 END;

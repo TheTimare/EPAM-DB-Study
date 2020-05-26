@@ -1,16 +1,18 @@
 DEFINE USER_NAME = &&1
 DEFINE TABLESPACE_NAME = "&&USER_NAME._DATA"
+DEFINE TABLESPACE_INDEX_NAME = &&USER_NAME._INDEX
 
 SET SERVEROUTPUT ON
 
 CREATE TABLE composition ( 
-  product_id INT NOT NULL,
-  component_name VARCHAR(255),
+  product_id NUMBER NOT NULL,
+  component_name VARCHAR(500),
   weight NUMBER(10,5),
   CONSTRAINT compose_pk 
     PRIMARY KEY (product_id, component_name)
   USING INDEX (
       CREATE UNIQUE INDEX pk_compose ON composition(product_id ASC, component_name)
+	  TABLESPACE &&TABLESPACE_INDEX_NAME
   ),
   CONSTRAINT compose_fk
     FOREIGN KEY (product_id)
@@ -18,14 +20,15 @@ CREATE TABLE composition (
 )
 TABLESPACE &&TABLESPACE_NAME;
 
-CREATE INDEX pk_compose_id ON composition(product_id ASC);
-CREATE INDEX pk_compose_name ON composition(component_name ASC);
+CREATE INDEX pk_compose_id ON composition(product_id ASC) TABLESPACE &&TABLESPACE_INDEX_NAME;
+CREATE INDEX pk_compose_name ON composition(component_name ASC) TABLESPACE &&TABLESPACE_INDEX_NAME;
 
-COMMENT ON COLUMN composition.product_id IS 'Уникальный идентификатор';
-COMMENT ON COLUMN composition.component_name IS 'Название ингредиента';
-COMMENT ON COLUMN composition.weight IS 'Вес ингредиента';
+COMMENT ON COLUMN composition.product_id IS 'РЈРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ';
+COMMENT ON COLUMN composition.component_name IS 'РќР°Р·РІР°РЅРёРµ РёРЅРіСЂРµРґРёРµРЅС‚Р°';
+COMMENT ON COLUMN composition.weight IS 'Р’РµСЃ РёРЅРіСЂРµРґРёРµРЅС‚Р°';
 
 SET SERVEROUTPUT OFF
 
 UNDEFINE USER_NAME
 UNDEFINE TABLESPACE_NAME
+UNDEFINE TABLESPACE_INDEX_NAME

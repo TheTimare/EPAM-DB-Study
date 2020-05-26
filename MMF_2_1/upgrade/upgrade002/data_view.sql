@@ -1,7 +1,7 @@
 SET SERVEROUTPUT ON
 
 CREATE VIEW Dolce_Vita AS 
-    SELECT b.batch_id AS Batch_Number, b.status AS Batch_Status,
+    SELECT b.batch_id - (SELECT MIN(batch_id) - 1 FROM batch) AS Batch_Number, b.status AS Batch_Status,
         c.name AS Customer_Name, c.address AS Address,
         t.name AS Transport,
         box.weight AS Box_Weight, box.type AS Box_Type, box.price AS Box_Price, box.amount AS Box_Count,
@@ -14,6 +14,6 @@ CREATE VIEW Dolce_Vita AS
         JOIN box ON bc.box_id = box.box_id
         JOIN product p ON box.product_id = p.product_id
         JOIN nutritional_value nv ON p.product_id = nv.product_id
-    ORDER BY box.box_id;
+    ORDER BY b.batch_id, box.box_id;
 
 SET SERVEROUTPUT OFF

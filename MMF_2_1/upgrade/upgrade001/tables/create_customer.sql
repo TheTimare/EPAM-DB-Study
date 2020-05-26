@@ -1,39 +1,28 @@
 DEFINE USER_NAME = &&1
 DEFINE TABLESPACE_NAME = "&&USER_NAME._DATA"
+DEFINE TABLESPACE_INDEX_NAME = &&USER_NAME._INDEX
 
 SET SERVEROUTPUT ON
 
 CREATE TABLE customer ( 
-  customer_id INT NOT NULL,
-  name VARCHAR(255) NOT NULL,
-  address VARCHAR(255) NOT NULL,
+  customer_id NUMBER GENERATED ALWAYS AS IDENTITY NOT NULL ,
+  name VARCHAR(500) NOT NULL,
+  address VARCHAR(500) NOT NULL,
   CONSTRAINT customer_pk 
     PRIMARY KEY (customer_id)
   USING INDEX (
       CREATE UNIQUE INDEX pk_customer ON customer(customer_id ASC)
+	  TABLESPACE &&TABLESPACE_INDEX_NAME
   )
 )
 TABLESPACE &&TABLESPACE_NAME;
 
-COMMENT ON COLUMN customer.customer_id IS '“никальный идентификатор заказчика';
-COMMENT ON COLUMN customer.name IS '€мЯ заказчика';
-COMMENT ON COLUMN customer.address IS 'Ђдресс заказчика';
+COMMENT ON COLUMN customer.customer_id IS 'РЈРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ Р·Р°РєР°Р·С‡РёРєР°';
+COMMENT ON COLUMN customer.name IS 'РРјСЏ Р·Р°РєР°Р·С‡РёРєР°';
+COMMENT ON COLUMN customer.address IS 'РђРґСЂРµСЃСЃ Р·Р°РєР°Р·С‡РёРєР°';
 
 SET SERVEROUTPUT OFF
 
 UNDEFINE USER_NAME
 UNDEFINE TABLESPACE_NAME
-
-/*
-DROP TABLE composition;
-DROP TABLE nutritional_value;
-
-DROP TABLE customer;
-DROP TABLE batch_content;
-DROP TABLE batch;
-DROP TABLE transport;
-DROP TABLE storage; 
-DROP TABLE box;
-
-DROP TABLE product;
-*/
+UNDEFINE TABLESPACE_INDEX_NAME

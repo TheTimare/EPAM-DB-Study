@@ -1,6 +1,6 @@
 SET SERVEROUTPUT ON
 
-INSERT INTO transport VALUES ('0', 'customer_own', 'all');
-INSERT INTO transport VALUES ('1', 'Volvo FM', 'truck');
+INSERT INTO transport(name) VALUES ('customer_own');
+INSERT INTO transport(name) VALUES ('Volvo FM');
 
 SET SERVEROUTPUT OFF
